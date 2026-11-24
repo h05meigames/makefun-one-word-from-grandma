@@ -21,7 +21,9 @@ and fresher than the obvious "robot".
 `main.ts` (Node 22, standard library only) writes the word to
 `/output/entry.txt` — one word, UTF-8, no trailing newline, 11 characters,
 well within the 1–30 character gate. It guards the length in code points
-(`[...word].length`) before writing.
+(`[...word].length`) before writing, rejects any non-letter character so
+the value is exactly one word of letters, and verifies the written file
+by reading it back byte-identical.
 
 ## Run it
 
